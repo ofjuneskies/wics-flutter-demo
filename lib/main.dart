@@ -31,18 +31,34 @@ class BusinessCardScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const SizedBox(height: 20.0),
+
+              // Profile Image:
               CircleAvatar(
                 radius: 50.0,
                 backgroundColor: Colors.white,
-                child: Icon(
-                  Icons.person,
-                  size: 50.0,
-                  color: Colors.deepPurple.shade300,
+                child: ClipOval(
+                  child: Image.asset(
+                    'images/profile.jpg',
+                    width: 100, // Ensure the image is large enough
+                    height: 100,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
+
+              // Default Icon:
+              // CircleAvatar(
+              //   radius: 50.0,
+              //   backgroundColor: Colors.white,
+              //   child: Icon(
+              //     Icons.person,
+              //     size: 50.0,
+              //     color: Colors.deepPurple.shade300,
+              //   ),
+              // ),
               const SizedBox(height: 20.0),
               const Text(
-                'John Doe',
+                'Jenny Liu',
                 style: TextStyle(
                   fontSize: 30.0,
                   color: Colors.white,
@@ -50,7 +66,16 @@ class BusinessCardScreen extends StatelessWidget {
                 ),
               ),
               const Text(
-                'COMPUTER SCIENCE STUDENT',
+                'Computer Science Student',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18.0,
+                  letterSpacing: 2.5,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const Text(
+                'University of California, Irvine',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 18.0,
@@ -63,6 +88,20 @@ class BusinessCardScreen extends StatelessWidget {
                 width: 150.0,
                 child: Divider(
                   color: Colors.deepPurple.shade200,
+                ),
+              ),
+              Divider(
+                thickness: 1.15,
+                indent: MediaQuery.of(context).size.width * 0.1,
+                endIndent: MediaQuery.of(context).size.width * 0.1,
+                color: Colors.grey.shade400,
+              ),
+              Text(
+                'Contact',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
               ),
               Card(
@@ -91,12 +130,26 @@ class BusinessCardScreen extends StatelessWidget {
                     color: Colors.deepPurple.shade300,
                   ),
                   title: Text(
-                    'johndoe@email.com',
+                    'jennyliu@fakeemail.com',
                     style: TextStyle(
                       color: Colors.deepPurple.shade200,
                       fontSize: 18.0,
                     ),
                   ),
+                ),
+              ),
+              Divider(
+                thickness: 1.15,
+                indent: MediaQuery.of(context).size.width * 0.1,
+                endIndent: MediaQuery.of(context).size.width * 0.1,
+                color: Colors.grey.shade400,
+              ),
+              Text(
+                'Socials',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
               ),
               const SizedBox(height: 20.0),
